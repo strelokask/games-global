@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "400ddd3c-afe7-4773-aa62-3ae878151978",
+		"name": "GamesGlobal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calculate surface area of water",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code test\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.body('4');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"O\", \"#\"],\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"O\", \"O\"],\r\n    [\"#\", \"#\", \"O\"]\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7180/api/Areas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7180",
+					"path": [
+						"api",
+						"Areas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empty area of water",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code test\", function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.body('0');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"#\", \"#\"]\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7180/api/Areas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7180",
+					"path": [
+						"api",
+						"Areas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code test\", function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"O\", \"#\"],\r\n    [\"#\", \"#\", \"#\"],\r\n    [\"#\", \"O\", \"O\"],\r\n    [\"#\", \"#\", \"X\"]\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7180/api/Areas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7180",
+					"path": [
+						"api",
+						"Areas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

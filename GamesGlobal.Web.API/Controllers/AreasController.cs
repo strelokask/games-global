@@ -15,6 +15,8 @@ namespace GamesGlobal.Web.API.Controllers
         }
 
         [HttpPost(Name = "CalculateSurfaceAreaOfWater")]
+        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         public IActionResult Calculate([FromBody] string[][] jaggedArray)
         {
             try
